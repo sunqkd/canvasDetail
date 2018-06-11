@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas">
+        浏览器不支持
+    </canvas>
+</body>
+<script>
+    var canvas= document.getElementById("canvas")
+    canvas.width = 800;
+    canvas.height = 800;
+
+    var context = canvas.getContext("2d");
+
+    context.lineWidth = 10;
+    context.strokeStyle = "cyan"
+
+    context.beginPath()
+
+    context.moveTo(100,350);
+    context.lineTo(500,350);
+    context.lineTo(500,200);
+    context.lineTo(700,400);
+    context.lineTo(500,600);
+    context.lineTo(500,450);
+    context.lineTo(100,450);
+
+    context.closePath()
+    context.fillStyle = "yellow"
+    /**
+    先填充颜色在描边，和先描边在填充颜色有区别
+    */
+    context.fill()
+    context.stroke()
+
+</script>
+</html>
+<style>
+    #canvas {
+        border: 1px solid red;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
